@@ -1,0 +1,28 @@
+{
+  "name": "landing",
+  "version": "1.0.0",
+  "description": "retournelamphi landing page",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/retournelamphi/landing.git"
+  },
+  "keywords": [
+    "react",
+    "server-side"
+  ],
+  "author": "Jermorin Llaine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/retournelamphi/landing/issues"
+  },
+  "homepage": "https://github.com/retournelamphi/landing#readme",
+  "dependencies": {
+    "browserify": "^13.0.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  }
+}

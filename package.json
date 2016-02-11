@@ -29,6 +29,8 @@
     "debug": "~2.1.1",
     "express": "~4.11.1",
     "express-validator": "^2.10.0",
+    "mongoose": "^4.4.3",
+    "request-ip": "^1.2.2",
     "serve-favicon": "~2.2.0"
   },
   "devDependencies": {

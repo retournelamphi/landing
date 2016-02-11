@@ -1,8 +1,9 @@
 import express from 'express';
+import * as subscriptionCtrl from '../controllers/subscription';
+
 const router = express.Router();
 
-router.get('/', function(req, res, next) {
-    res.render('home');
-});
+router.post('/subscription', subscriptionCtrl.subscribe);
+router.get('/', (req, res, next) => res.render('home'));
 
 export default router;

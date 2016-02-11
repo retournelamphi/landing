@@ -17,9 +17,9 @@ html
             h1 Retourne Lamphi
             p R&eacute;volution de l&apos;&eacute;ducation par la notation libre des &eacute;coles
         // Signup Form
-        form#signup-form(method='post', action='#')
+        form#signup-form(method='post' action='/subscription')
             input#email(type='email', name='email', placeholder='Adresse mail')
-            input(type='submit', value='Je donne mon avis')
+            input(type='submit', name='submit' value='Je donne mon avis')
         // Footer
         footer#footer
             ul.icons
@@ -39,5 +39,4 @@ html
                 li &copy; Retourne Lamphi.
         //if lte IE 8
           script(src='js/ie/respond.min.js')
-        | &#x9;&#x9;&#x9;
         script(src='js/main.js')

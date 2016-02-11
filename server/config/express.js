@@ -7,11 +7,13 @@ import methodOverride from 'method-override';
 import cors from 'cors';
 import routes from '../routes';
 import path from 'path';
+import requestIp from 'request-ip';
 
 const app = express();
 
 
 app.use(logger('dev'));
+app.use(requestIp.mw());
 app.use(express.static(__dirname + '/../../public'));
 
 

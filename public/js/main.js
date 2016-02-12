@@ -157,8 +157,6 @@
         if (!('addEventListener' in $form))
             return;
 
-        $form.appendChild($message);
-
         // Events.
         // Note: If you're *not* using AJAX, get rid of this event listener.
 

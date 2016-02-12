@@ -2,14 +2,13 @@ import Subscription from '../models/subscription';
 import {sendgridKey} from './../private/sendgrid';
 const sendgrid = require('sendgrid')(sendgridKey);
 
-/**
- *
- * @param res
- * @param err
- * @param msg
- */
+const MSG_ERROR_MAIL = 'Notre serveur mail rencontre des problèmes, merci de réessayer plus tard.';
+const MSG_ERROR_MONGO_EMAIL_DUPLICATE = 'Ce mail est déjà utilisé.';
+const MSG_ERROR_MONGO_ERROR = 'Un problème est survenu !';
+const MSG_SUCCESS = 'Merci pour votre contribution !';
+
 const renderWithFlagMsg = (res, err = null, msg = null) => {
-  res.render('home', { err, msg });
+    res.render('home', {err, msg});
 };
 
 export function subscribe(req, res, next) {
@@ -20,7 +19,7 @@ export function subscribe(req, res, next) {
     });
 
     subscription.save((errMongo, doc) => {
-        if(!errMongo){
+        if (!errMongo) {
             sendgrid.send(new sendgrid.Email({
                 to: req.body.email,
                 from: 'hi@retournelamphi.fr',
@@ -28,21 +27,17 @@ export function subscribe(req, res, next) {
                 text: 'Merci pour cette subscription'
             }), (err, json) => {
                 if (err) {
-                    renderWithFlagMsg(res, "Notre serveur mail rencontre des problèmes, merci de réessayer plus tard.");
-                    return console.error(err);
+                    renderWithFlagMsg(res, MSG_ERROR_MAIL);
                 } else {
-                  renderWithFlagMsg(res, null, 'Email bien envoyé !');
+                    renderWithFlagMsg(res, null, MSG_SUCCESS);
                 }
             });
         } else {
-          let messageError;
-          if(errMongo.code = 11000) {
-            messageError = 'Ce mail est déjà utilisé';
-          } else {
-            messageError = 'Un problème est apparu'
-          }
-
-          renderWithFlagMsg(res, messageError);
+            if (errMongo.code = 11000) {
+                renderWithFlagMsg(res, MSG_ERROR_MONGO_EMAIL_DUPLICATE);
+            } else {
+                renderWithFlagMsg(res, MSG_ERROR_MONGO_ERROR);
+            }
         }
     });
 }

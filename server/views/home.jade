@@ -20,10 +20,8 @@ html
         form#signup-form(method='post' action='/subscription')
             input#email(type='email', name='email', placeholder='Adresse mail')
             input(type='submit', name='submit' value='Je donne mon avis')
-
             -if(msg)
                 span.message.success.visible !{msg}
-
             -if(err)
                 span.message.failure.visible !{err}
 

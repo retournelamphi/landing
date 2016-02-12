@@ -7,8 +7,9 @@ const MSG_ERROR_MONGO_EMAIL_DUPLICATE = 'Ce mail est déjà utilisé.';
 const MSG_ERROR_MONGO_ERROR = 'Un problème est survenu !';
 const MSG_SUCCESS = 'Merci pour votre contribution !';
 
-const renderWithFlagMsg = (res, err = null, msg = null) => {
+const renderWithFlagMsg = (res, next, err = null, msg = null) => {
     res.render('home', {err, msg});
+    next();
 };
 
 export function subscribe(req, res, next) {
@@ -30,16 +31,16 @@ export function subscribe(req, res, next) {
                 text: 'Merci pour cette subscription'
             }), (err, json) => {
                 if (err) {
-                    renderWithFlagMsg(res, MSG_ERROR_MAIL);
+                    renderWithFlagMsg(res, next, MSG_ERROR_MAIL);
                 } else {
-                    renderWithFlagMsg(res, null, MSG_SUCCESS);
+                    renderWithFlagMsg(res, next, null, MSG_SUCCESS);
                 }
             });
         } else {
             if (errMongo.code = 11000) {
-                renderWithFlagMsg(res, MSG_ERROR_MONGO_EMAIL_DUPLICATE);
+                renderWithFlagMsg(res, next, MSG_ERROR_MONGO_EMAIL_DUPLICATE);
             } else {
-                renderWithFlagMsg(res, MSG_ERROR_MONGO_ERROR);
+                renderWithFlagMsg(res, next, MSG_ERROR_MONGO_ERROR);
             }
         }
     });

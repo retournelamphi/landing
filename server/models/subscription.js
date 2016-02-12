@@ -10,7 +10,7 @@ const schema = new mongoose.Schema({
         type: String,
         required: true
     },
-    subAt: {
+    date: {
         type: Date,
         required: true
     }

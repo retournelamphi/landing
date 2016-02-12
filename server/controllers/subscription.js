@@ -12,16 +12,19 @@ const renderWithFlagMsg = (res, err = null, msg = null) => {
 };
 
 export function subscribe(req, res, next) {
+    const email = req.body.email;
+
     const subscription = new Subscription({
-        email: req.body.email,
+        email: email,
         ip: req.clientIp,
-        subAt: new Date()
+        date: new Date()
     });
 
     subscription.save((errMongo, doc) => {
+        console.log(errMongo);
         if (!errMongo) {
             sendgrid.send(new sendgrid.Email({
-                to: req.body.email,
+                to: email,
                 from: 'hi@retournelamphi.fr',
                 subject: 'Merci',
                 text: 'Merci pour cette subscription'

@@ -18,8 +18,9 @@ html
             p R&eacute;volution de l&apos;&eacute;ducation par la notation libre des &eacute;coles
         // Signup Form
         form#signup-form(method='post' action='/subscription')
-            input#email(type='email', name='email', placeholder='Adresse mail')
+            input#email(type='email', name='email', placeholder='Adresse mail' required=true)
             input(type='submit', name='submit' value='Je donne mon avis')
+
             -if(msg)
                 span.message.success.visible !{msg}
             -if(err)

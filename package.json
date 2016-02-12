@@ -30,6 +30,7 @@
     "express": "~4.11.1",
     "express-validator": "^2.10.0",
     "mongoose": "^4.4.3",
+    "morgan": "^1.6.1",
     "request-ip": "^1.2.2",
     "sendgrid": "^2.0.0",
     "serve-favicon": "~2.2.0"

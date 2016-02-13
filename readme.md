@@ -1,5 +1,6 @@
 #landing
 
+[![Code Climate](https://codeclimate.com/github/retournelamphi/landing/badges/gpa.svg)](https://codeclimate.com/github/retournelamphi/landing)
 [![bitHound Overall Score](https://www.bithound.io/github/retournelamphi/landing/badges/score.svg)](https://www.bithound.io/github/retournelamphi/landing)
 
 [![bitHound Dependencies](https://www.bithound.io/github/retournelamphi/landing/badges/dependencies.svg)](https://www.bithound.io/github/retournelamphi/landing/master/dependencies/npm)

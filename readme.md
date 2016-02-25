@@ -38,7 +38,7 @@
 
 ##todo
 
-[ ] add subscription count in `index.jade`
-[ ] change `public/images/*`
-[ ] change mail template `server/constants/subscription.js`
-[ ] add ganalytics
+- [ ] add subscription count in `index.jade`
+- [ ] change `public/images/*`
+- [ ] change mail template `server/constants/subscription.js`
+- [ ] add ganalytics

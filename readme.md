@@ -35,3 +35,10 @@
 ##process
 
 - [git-flow](https://github.com/nvie/gitflow)
+
+##todo
+
+[ ] add subscription count in `index.jade`
+[ ] change `public/images/*`
+[ ] change mail template `server/constants/subscription.js`
+[ ] add ganalytics

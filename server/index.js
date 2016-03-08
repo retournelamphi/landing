@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const debug = require('debug')('landing:index');
 
 
-const mongoPath = `mongodb://192.168.99.100:27017/landing`;
+const mongoPath = `mongodb://jermorin:retournelamphi<3@ds019498.mlab.com:19498/retournelamphi_landing`;
 
 mongoose.connect(mongoPath, {server: {socketOptions: {keepAlive: 1}}});
 mongoose.connection.on('error', λ => {

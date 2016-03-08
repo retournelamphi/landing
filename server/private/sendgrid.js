@@ -1,0 +1,1 @@
+export const sendgridKey = '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';

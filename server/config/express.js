@@ -8,6 +8,7 @@ import cors from 'cors';
 import routes from '../routes';
 import path from 'path';
 import requestIp from 'request-ip';
+import swig from 'swig';
 
 const app = express();
 
@@ -18,9 +19,9 @@ app.use(express.static(__dirname + '/../../public'));
 
 
 // View engine setup
+app.engine('html', swig.renderFile);
+app.set('view engine', 'html');
 app.set('views', path.join(__dirname, '/../views'));
-app.set('view engine', 'jade');
-app.engine('html', require('jade').renderFile);
 
 
 // parse body params and attache them to req.body

@@ -1,4 +1,4 @@
-import Subscription from '../models/subscription';
+import Subscription from './../models/subscription';
 import {sendgridKey} from './../private/sendgrid';
 import {
     MSG_ERROR_MAIL,
@@ -10,12 +10,6 @@ import {
 } from './../constants/subscription'
 
 const sendgrid = require('sendgrid')(sendgridKey);
-
-
-const renderWithFlagMsg = (res, next, err = null, msg = null) => {
-    res.render('home', {err, msg});
-    next();
-};
 
 const sendMail = (email) => {
     return new Promise((resolve, reject) => {
@@ -37,7 +31,6 @@ const sendMail = (email) => {
 
 export function subscribe(req, res, next) {
     const email = req.body.email;
-
     const subscription = new Subscription({
         email: email,
         ip: req.clientIp,
@@ -46,15 +39,19 @@ export function subscribe(req, res, next) {
 
     subscription.save().then(λ => {
         sendMail(email).then(λ => {
-            renderWithFlagMsg(res, next, null, MSG_SUCCESS);
+            res.json(MSG_SUCCESS);
         }).catch(λ => {
-            renderWithFlagMsg(res, next, MSG_ERROR_MAIL);
+            res.status(500).send(MSG_ERROR_MAIL);
         })
     }).catch((e) => {
-        if (e.code = 11000) {
-            renderWithFlagMsg(res, next, MSG_ERROR_MONGO_EMAIL_DUPLICATE);
+        if (e.code === 11000) {
+            res.status(500).send(MSG_ERROR_MONGO_EMAIL_DUPLICATE);
         } else {
-            renderWithFlagMsg(res, next, MSG_ERROR_MONGO_ERROR);
+            res.status(500).send(MSG_ERROR_MONGO_ERROR);
         }
     });
+}
+
+export function count(req, res, next){
+    Subscription.count({}, (err, count) => res.json(count));
 }

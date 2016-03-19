@@ -51,3 +51,7 @@ export function subscribe(req, res, next) {
         }
     });
 }
+
+export function count(req, res, next){
+    Subscription.count({}, (err, count) => res.json(count));
+}

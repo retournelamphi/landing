@@ -18,10 +18,9 @@ app.use(express.static(__dirname + '/../../public'));
 
 
 // View engine setup
-app.set('views', path.join(__dirname, '/../views'));
-app.set('view engine', 'jade');
-app.engine('html', require('jade').renderFile);
-
+app.set('views', path.join(__dirname + '/../views'));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
 
 // parse body params and attache them to req.body
 app.use(bodyParser.json());

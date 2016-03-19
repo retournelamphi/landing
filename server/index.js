@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const debug = require('debug')('landing:index');
 
 
-const mongoPath = `xxx`;
+const mongoPath = `mongodb://192.168.99.100:27017`;
 
 mongoose.connect(mongoPath, {server: {socketOptions: {keepAlive: 1}}});
 mongoose.connection.on('error', λ => {

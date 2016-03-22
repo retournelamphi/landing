@@ -11,6 +11,7 @@
     <title>Retourne L'amphi</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css"/>
     <link href="/stylesheets/style.css" rel="stylesheet">
 </head>
 
@@ -24,19 +25,13 @@
 
     <form class="signup-form" ng-submit="main.submit()">
         <div class="input-group input-group-md" ng-class="{'has-error': main.formError}">
-            <input type="email" class="form-control" placeholder="Adresse email" ng-model="main.email"
+            <input type="email" class="form-control transparent-input" placeholder="Adresse email" ng-model="main.email"
                    ng-disabled="main.submitted">
             <span class="input-group-btn">
-              <button class="btn btn-danger" type="submit" ng-disabled="main.submitted">Donne ton avis</button>
+              <button class="btn btn-success btn-rl" type="submit" ng-disabled="main.submitted">Donne ton avis</button>
             </span>
         </div>
-        <span ng-show="main.formError" style="color: red"><i class="fa fa-times"></i> {{main.errorMsg}}</span>
-        <span ng-show="main.formSuccess" style="color: green"><i class="fa fa-check"></i> {{main.successMsg}}</span>
     </form>
-
-    <p style="padding-top: 20px">Il y a {{main.count}} personnes qui retournent déjà l'amphi, toi aussi participe !</p>
-
-
 
     <div style="align-items: center">
         <a href=""><i class="fa fa-github fa-2"></i></a>
@@ -50,6 +45,8 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>
+<script src="https://npmcdn.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
 <script src="/javascripts/script.js"></script>
 </body>
 </html>

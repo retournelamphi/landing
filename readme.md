@@ -42,3 +42,4 @@
 - [ ] change `public/images/*`
 - [ ] change mail template `server/constants/subscription.js`
 - [ ] add ganalytics
+- [ ] move cdn to bower

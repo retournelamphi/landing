@@ -11,7 +11,14 @@
 
 - `npm install`
 - launch mongodb
-- `npm run start`
+- `npm run start-dev`
+
+
+##production 
+
+- `npm install`
+- `npm run build`
+- `cd dist && npm start`
 
 ##stack
 

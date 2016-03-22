@@ -17,7 +17,7 @@ app.controller('MainCtrl', function ($http, toastr) {
         };
         $http(req).success(function (data, status, headers) {
             if (!self.submitted) {
-                toastr.success('composée de ' + data + ' personnes t\'attendent pour la révolution !', 'La communauté Retourne L\'amphi');
+                toastr.success('composée de ' + data + ' personnes t\'attend pour la révolution !', 'La communauté Retourne L\'amphi');
             }
             self.count = data;
         });

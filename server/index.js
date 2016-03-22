@@ -12,6 +12,6 @@ mongoose.connection.on('error', λ => {
 
 
 // listen on port config.port
-app.listen(5000, λ => debug(`started server on port 3000`));
+app.listen(process.env.PORT || 5000, λ => debug(`started server on port 5000`));
 
 export default app;

@@ -1,94 +1,101 @@
 [ng\:cloak], [ng-cloak], .ng-cloak {
-  display: none !important;
+    display: none !important;
 }
 
 html,
 body {
-  background-color: #202E3D;
-  padding: 0;
-  margin: 0;
+    background-color: #202E3D;
+    padding: 0;
+    margin: 0;
 }
+
 body {
- color: #e8e8e8;
- text-align: center;
+    color: #e8e8e8;
+    text-align: center;
 }
 
 h1 {
-  color: #fff;
+    color: #fff;
 }
 
 .container {
-  max-width: 700px;
-  margin: 0 auto;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .alert .close {
-  font-size: 15px;
+    font-size: 15px;
 }
 
 .input-group {
-  max-width: 450px;
-  margin: 0 auto 20px;
+    max-width: 450px;
+    margin: 0 auto 20px;
 }
 
 .alert {
-  max-width: 450px;
-  margin: -15px auto 10px;
-  padding: 5px;
-  font-size: 13px;
+    max-width: 450px;
+    margin: -15px auto 10px;
+    padding: 5px;
+    font-size: 13px;
 }
 
 .logo {
-  max-width: 180px;
-  display: block;
-  margin: 20px auto 20px;
-  width: 100%;
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
+    max-width: 180px;
+    display: block;
+    margin: 20px auto 20px;
+    width: 100%;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
 }
 
 .built-with {
-  max-width: 360px;
-  margin: 40px auto 0;
+    max-width: 360px;
+    margin: 40px auto 0;
 }
+
 .thumbnail {
-  background: transparent;
-  border: 0;
-  opacity: 0.8;
+    background: transparent;
+    border: 0;
+    opacity: 0.8;
 }
 
 .thumbnail:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 .has-error .form-control {
-  box-shadow: none;
+    box-shadow: none;
 }
 
 .signup-form {
-  margin-top: 30px;
+    margin-top: 30px;
 }
+
 a,
 a:focus,
 a:hover {
-  color: #FF8C88;
+    color: #FF8C88;
 }
 
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-  color: #264348;
-  text-shadow: none;
-  background-color: #fff;
-  border: 1px solid #fff;
-  border-radius: 5px;
+    color: #264348;
+    text-shadow: none;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
 }
 
 .fa-2 {
-  color: white;
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  font-size: 2em;
+    color: white;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    font-size: 2em;
+}
+
+.toast-bottom-full-width {
+    padding-bottom: 20px;
 }

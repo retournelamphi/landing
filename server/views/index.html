@@ -18,22 +18,24 @@
 <body ng-controller="MainCtrl as main" ng-cloak>
 
 <div class="container">
-    <p><img class="logo" src="/images/logo.png" alt="logo"></p>
+    <p><img class="logo" src="/images/logo.svg" alt="logo"></p>
 
-    <h1 class="cover-heading">Retourne L'amphi</h1>
+    <h1 class="cover-heading" style="padding-bottom: 10%">Retourne L'amphi</h1>
     <h5>Partage ton expérience sur l'éducation d'aujourd'hui, contribue à la révolution de demain.</h5>
 
     <form class="signup-form" ng-submit="main.submit()">
         <div class="input-group input-group-md" ng-class="{'has-error': main.formError}">
             <input type="email" class="form-control transparent-input" placeholder="Adresse email" ng-model="main.email"
-                   ng-disabled="main.submitted">
+            ng-disabled="main.submitted">
             <span class="input-group-btn">
-              <button class="btn btn-success btn-rl" type="submit" ng-disabled="main.submitted">Donne ton avis</button>
+              <button class="btn btn-success btn-rl" type="submit" ng-disabled="main.submitted">Je participe</button>
             </span>
         </div>
     </form>
+    <span class="count" count-to="{{main.count}}" value="0" duration="1"></span>  personnes retournent déjà l'amphi
 
-    <div style="align-items: center">
+
+    <div style="align-items: center; padding-top: 60px">
         <a href="https://github.com/retournelamphi"><i class="fa fa-github fa-2"></i></a>
         <a href="https://www.facebook.com/retournelamphi/"><i class="fa fa-facebook fa-2"></i></a>
         <a href=""><i class="fa fa-twitter fa-2"></i></a>

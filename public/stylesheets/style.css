@@ -10,8 +10,6 @@ body {
     background: url("../images/background.jpeg") no-repeat center fixed;
     -webkit-background-size: cover; /* pour anciens Chrome et Safari */
     background-size: cover; /* version standardisée */
-}
-body {
     color: #e8e8e8;
     text-align: center;
 }

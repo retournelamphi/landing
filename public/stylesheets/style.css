@@ -7,7 +7,7 @@ body {
     background-color: #202E3D;
     margin: 0;
     vertical-align: middle;
-    background: url("../images/background.jpeg") no-repeat center fixed;
+    background: url("../images/background.png") no-repeat center fixed;
     -webkit-background-size: cover; /* pour anciens Chrome et Safari */
     background-size: cover; /* version standardisée */
     color: #e8e8e8;
@@ -16,11 +16,47 @@ body {
 
 h1 {
     color: #fff;
+    font-size : 65px;
+}
+
+h2 {
+    font-size : 20px;
+    color: black;
+    font-weight: bold;
+}
+
+h3 {
+    font-size : 18px;
+    color : black;
+    text-align: justify;
+
+}
+
+h5 {
+    font-size : 22px;
+    font-weight: bold;
+}
+
+#textalign{
+    text-align: center;
 }
 
 .container {
     max-width: 700px;
-    margin: 0 auto;
+    min-height: auto;
+    margin: auto auto;
+    font-family: 'Poiret One', cursive;
+    background-color: rgba(0,0,0,0.65);
+    border-radius:5%;
+    margin-top: 7.5%;
+}
+
+.modal {
+
+    margin:auto auto;
+    font-family: 'Poiret One', cursive;
+    font-size: 20px;
+    border-radius: 5%;
 }
 
 .alert .close {
@@ -67,6 +103,7 @@ h1 {
 
 .signup-form {
     margin-top: 30px;
+    font-weight: bold;
 }
 
 a,
@@ -92,6 +129,18 @@ a:hover {
     padding-bottom: 20px;
     padding-left: 20px;
     font-size: 2em;
+}
+
+.fa-github:hover {
+    color:#323131;
+}
+
+.fa-facebook:hover {
+    color :#3b5998;
+}
+
+.fa-twitter:hover {
+    color : #5ea9dd;
 }
 
 .toast-bottom-full-width {

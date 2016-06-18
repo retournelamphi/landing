@@ -8,11 +8,17 @@
           content="Partage ton expérience sur l'éducation d'aujourd'hui, contribue à la révolution de demain.">
     <meta name="author" content="retournelamphi">
     <link rel="icon" href="/images/favicon.ico">
-    <title>Retourne L'amphi</title>
+    <title>Retourne l'Amphi</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css"/>
     <link href="/stylesheets/style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+    <script src="https://npmcdn.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.js"></script>
+    <script src="/javascripts/script.js"></script>
 </head>
 
 <body ng-controller="MainCtrl as main" ng-cloak>
@@ -20,35 +26,56 @@
 <div class="container">
     <p><img class="logo" src="/images/logo.svg" alt="logo"></p>
 
-    <h1 class="cover-heading" style="padding-bottom: 10%">Retourne L'amphi</h1>
-    <h5>Partage ton expérience sur l'éducation d'aujourd'hui, contribue à la révolution de demain.</h5>
+    <h1 class="cover-heading" style="padding-bottom: 5%">Retourne l'Amphi</h1>
+    <h5>Partage ton expérience sur l'éducation d'aujourd'hui,<br> contribue à la révolution de demain.</h5>
 
     <form class="signup-form" ng-submit="main.submit()">
         <div class="input-group input-group-md" ng-class="{'has-error': main.formError}">
             <input type="email" class="form-control transparent-input" placeholder="Adresse email" ng-model="main.email"
-            ng-disabled="main.submitted">
+                   ng-disabled="main.submitted">
             <span class="input-group-btn">
-              <button class="btn btn-success btn-rl" type="submit" ng-disabled="main.submitted">Je participe</button>
+              <button class="btn btn-success btn-rl" type="submit"
+                      ng-disabled="main.submitted"><strong>Je participe</strong></button>
             </span>
         </div>
     </form>
-    <span class="count" count-to="{{main.count}}" value="0" duration="1"></span>  personnes retournent déjà l'amphi
+    <h5><span class="count" count-to="{{main.count}}" value="0" duration="1"></span> personnes retournent déjà l'amphi
+    </h5>
 
-
-    <div style="align-items: center; padding-top: 60px">
+    <div style="align-items: center; padding-top: 10px">
         <a href="https://github.com/retournelamphi"><i class="fa fa-github fa-2"></i></a>
         <a href="https://www.facebook.com/retournelamphi/"><i class="fa fa-facebook fa-2"></i></a>
         <a href=""><i class="fa fa-twitter fa-2"></i></a>
     </div>
 
-    <p>
-        Brought to you with <i class="fa fa-heart"></i> by students
-    </p>
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h2 class="modal-title">Plus d'informations</h2>
+        </div>
+        <div class="modal-body">
+            <div class="textalign">
+                <h2>Nous</h2> <br>
+                <h3>Retourne l'Amphi est né à Bordeaux en 2015. </h3>
+                <h2>Pourquoi 'Retourne' ?</h2> <br>
+                <h3> De nos jours, il devient de plus en plus difficle de choisir sa voie.<br>Retourne l'Amphi vous
+                    donne la <b>parole</b>, c'est à votre tour de <b>noter</b> votre ou vos <b>universités</b> !! Grâce
+                    à vous, les prochaines générations vont mieux s'orienter et faire de meilleurs choix pour leur
+                    futur. </h3>
+                <h2>Donner mon adresse ?! Pourquoi faire ?</h2> <br>
+                <h3> C'est grâce à ta contribution que la communauté Retourne l'Amphi pourra voir le jour ! </h3>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-success" type="button" ng-click="ok()"><strong>D'accord !</strong></button>
+        </div>
+    </script>
+
+    <button type="button" class="btn btn-default" ng-click="main.open()"><strong>Plus d'informations</strong></button>
+
+    <div style="align-items: center; padding-top: 8px">
+        <p>Brought to you with <i class="fa fa-heart"></i> by students</p>
+    </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>
-<script src="https://npmcdn.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
-<script src="/javascripts/script.js"></script>
 </body>
 </html>

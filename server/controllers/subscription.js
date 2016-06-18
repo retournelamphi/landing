@@ -41,11 +41,11 @@ export function subscribe(req, res, next) {
         sendMail(email).then(λ => {
             res.json(MSG_SUCCESS);
         }).catch(λ => {
-            res.status(500).send(MSG_ERROR_MAIL);
+            res.status(403).send(MSG_ERROR_MAIL);
         })
     }).catch((e) => {
         if (e.code === 11000) {
-            res.status(500).send(MSG_ERROR_MONGO_EMAIL_DUPLICATE);
+            res.status(403).send(MSG_ERROR_MONGO_EMAIL_DUPLICATE);
         } else {
             res.status(500).send(MSG_ERROR_MONGO_ERROR);
         }

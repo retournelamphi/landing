@@ -84,6 +84,7 @@ function MainCtrl($http, toastr, $uibModal) {
         self.getCount = getCount;
         self.submit = submit;
         self.open = openModal;
+        getCount();
     }
 
 

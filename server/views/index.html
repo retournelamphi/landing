@@ -9,16 +9,11 @@
     <meta name="author" content="retournelamphi">
     <link rel="icon" href="/images/favicon.ico">
     <title>Retourne l'Amphi</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css"/>
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="libs/angular-toastr/dist/angular-toastr.min.css"/>
     <link href="/stylesheets/style.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
-    <script src="https://npmcdn.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>
-    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.js"></script>
-    <script src="/javascripts/script.js"></script>
 </head>
 
 <body ng-controller="MainCtrl as main" ng-cloak>
@@ -34,12 +29,17 @@
             <input type="email" class="form-control transparent-input" placeholder="Adresse email" ng-model="main.email"
                    ng-disabled="main.submitted">
             <span class="input-group-btn">
-              <button class="btn btn-success btn-rl" type="submit"
+              <button class="btn btn-success btn-rl"
+                      type="submit"
                       ng-disabled="main.submitted"><strong>Je participe</strong></button>
             </span>
         </div>
     </form>
-    <h5><span class="count" count-to="{{main.count}}" value="0" duration="1"></span> personnes retournent déjà l'amphi
+    <h5>
+        <span class="count"
+              count-to="{{main.count}}"
+              value="0"
+              duration="1"></span> personnes retournent déjà l'amphi
     </h5>
 
     <div style="align-items: center; padding-top: 10px">
@@ -48,34 +48,89 @@
         <a href=""><i class="fa fa-twitter fa-2"></i></a>
     </div>
 
-    <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-            <h2 class="modal-title">Plus d'informations</h2>
-        </div>
-        <div class="modal-body">
-            <div class="textalign">
-                <h2>Nous</h2> <br>
-                <h3>Retourne l'Amphi est né à Bordeaux en 2015. </h3>
-                <h2>Pourquoi 'Retourne' ?</h2> <br>
-                <h3> De nos jours, il devient de plus en plus difficle de choisir sa voie.<br>Retourne l'Amphi vous
-                    donne la <b>parole</b>, c'est à votre tour de <b>noter</b> votre ou vos <b>universités</b> !! Grâce
-                    à vous, les prochaines générations vont mieux s'orienter et faire de meilleurs choix pour leur
-                    futur. </h3>
-                <h2>Donner mon adresse ?! Pourquoi faire ?</h2> <br>
-                <h3> C'est grâce à ta contribution que la communauté Retourne l'Amphi pourra voir le jour ! </h3>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-success" type="button" ng-click="ok()"><strong>D'accord !</strong></button>
-        </div>
-    </script>
-
-    <button type="button" class="btn btn-default" ng-click="main.open()"><strong>Plus d'informations</strong></button>
+    <a data-backdrop="static"
+       data-keyboard="false"
+       class="btn more-btn"
+       ng-click="main.open('lg')">
+        <strong><i class="fa fa-3x fa-plus"></i> <span class="hidden-xs hidden-sm">Plus d'informations</span></strong>
+    </a>
 
     <div style="align-items: center; padding-top: 8px">
         <p>Brought to you with <i class="fa fa-heart"></i> by students</p>
     </div>
 </div>
 
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h2 class="modal-title">Plus d'informations</h2>
+    </div>
+    <div class="modal-body">
+        <h5>Notre objectif</h5>
+
+        <p>
+            Qu’est-ce que je peux faire avec ce diplôme ? BTS, DUT, Fac, école d’ingénieur : quelle est la différence ?
+            Cette école tiendra-t-elle ses engagements ? Le cursus qu’elle propose est-il intéressant ?
+            Correspondra-t-il à mes attentes ?
+        </p>
+
+        <p>
+            Nous nous sommes déjà tous posé ce genre de question lors de notre entrée dans le monde des études
+            supérieures. Et encore aujourd'hui, les seules informations pouvant nous aider à y répondre sont celles
+            communiquées par les différents établissements.
+        </p>
+
+        <p>
+            La communauté Retourne l’Amphi a été créée dans le but très simple de changer cela,
+            et de proposer aux étudiants de demain une plate-forme leur permettant d’avoir une
+            image objective et transparente des établissements supérieurs de France.
+        </p>
+
+        <h5>Pourquoi donner mon adresse mail ?</h5>
+
+        <p>Cette plate forme pourra voir le jour et se développera grâce aux avis réunis partout en France. En laissant ton
+        adresse, tu pourras par la suite nous faire part de ton avis et ainsi apporter ta pierre à cet édifice.</p>
+
+        <p>Alors si tu es étudiant(e) ou que tu viens de finir tes études, n’hésite pas une seconde, rejoins-nous !</p>
+
+        <h5>Qui sommes-nous ?</h5>
+
+        <p>Issue d’une collaboration entre un professeur et cinq étudiants à l’Université de Bordeaux. L’idée de Retourne
+        l’Amphi nous est venue en observant nos différents parcours et en nous demandant ce qu’il serait advenu si une
+        telle plate-forme avait existé.</p>
+
+        <b>C’est ainsi que Retourne l’Amphi est né.</b>
+
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success" type="button" ng-click="ok()"><strong>D'accord !</strong></button>
+    </div>
+</script>
+<script src="libs/angular/angular.min.js"></script>
+<script src="libs/angular-toastr/dist/angular-toastr.min.js"></script>
+<script src="libs/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+<script src="libs/angular-animate/angular-animate.min.js"></script>
+<script src="libs/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="libs/angulartics/dist/angulartics.min.js"></script>
+<script src="libs/angulartics-google-analytics/dist/angulartics-ga.min.js"></script>
+<script src="/javascripts/script.js"></script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-79548352-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
 </body>
 </html>

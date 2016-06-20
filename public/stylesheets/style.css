@@ -42,17 +42,16 @@ h5 {
 }
 
 .container {
-    max-width: 700px;
-    min-height: auto;
-    margin: auto auto;
     font-family: 'Poiret One', cursive;
     background-color: rgba(0,0,0,0.65);
-    border-radius:5%;
-    margin-top: 7.5%;
+    position: fixed;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .modal {
-
+    color: #000000;
     margin:auto auto;
     font-family: 'Poiret One', cursive;
     font-size: 20px;
@@ -61,6 +60,17 @@ h5 {
 
 .alert .close {
     font-size: 15px;
+}
+
+a.more-btn.btn {
+    top:0;
+    left: 0;
+    position: fixed;
+    color: white;
+}
+
+a.more-btn.btn :hover{
+    color: white;
 }
 
 .input-group {

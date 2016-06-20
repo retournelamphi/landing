@@ -16,8 +16,9 @@
     "url": "git+https://github.com/retournelamphi/landing.git"
   },
   "keywords": [
-    "react",
-    "server-side"
+    "node",
+    "angular",
+    "mongo"
   ],
   "author": "Jermorin Llaine",
   "license": "ISC",

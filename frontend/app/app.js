@@ -1,13 +1,16 @@
 var app = angular.module('app', ['ngAnimate', 'toastr', 'ui.bootstrap']);
 
-app.controller('MainCtrl', MainCtrl)
-    .directive('countTo', CountoDirective)
+angular.module('app')
+    .controller('MainCtrl', MainCtrl)
+    .directive('countTo', ['$timeout', CountoDirective])
     .config(function (toastrConfig) {
         angular.extend(toastrConfig, {
             positionClass: 'toast-top-right'
         });
     });
 
+MainCtrl.$inject = ['$http', 'toastr', '$uibModal'];
+CountoDirective.$inject = ['$timeout'];
 
 function CountoDirective($timeout) {
     return {

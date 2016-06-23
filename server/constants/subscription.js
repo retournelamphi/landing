@@ -3,7 +3,7 @@ export const MSG_ERROR_MONGO_EMAIL_DUPLICATE = 'Ce mail est déjà utilisé.';
 export const MSG_ERROR_MONGO_ERROR = 'Un problème est survenu !';
 export const MSG_SUCCESS = 'Te remercie pour ta contribution !';
 
-export const MAIL_SERVER_ADRESS = 'hi@retournelamphi.fr';
+export const MAIL_SERVER_ADRESS = 'infos@retournelamphi.fr';
 export const MAIL_SUBJECT = 'Bienvenue dans la communauté Retourne l’Amphi !';
 export const MAIL_BODY = `La communauté Retourne l’Amphi est très heureuse de te compter parmi ses membres !
 
@@ -14,5 +14,4 @@ Envoie les nous à hi@retournelamphi.fr et nous y répondrons au plus vite.
 
 À très bientôt !
 
-L’équipe de Retourne l’Amphi.
-`;
+L’équipe de Retourne l’Amphi.`;

@@ -12,6 +12,7 @@ angular.module('app')
 MainCtrl.$inject = ['$http', 'toastr', '$uibModal'];
 CountoDirective.$inject = ['$timeout'];
 
+/* @ngInject */
 function CountoDirective($timeout) {
     return {
         replace: false,
@@ -73,6 +74,7 @@ function CountoDirective($timeout) {
     }
 }
 
+/* @ngInject */
 function MainCtrl($http, toastr, $uibModal) {
 
     var self = this;
@@ -143,3 +145,5 @@ function MainCtrl($http, toastr, $uibModal) {
 
     _init();
 }
+
+export default app;

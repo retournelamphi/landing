@@ -5,6 +5,7 @@ var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 module.exports = function makeWebpackConfig() {
     /**
@@ -124,6 +125,10 @@ module.exports = function makeWebpackConfig() {
 
 
     config.plugins.push(
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        }),
         // Reference: http://webpack.github.io/docs/list-of-plugins.html#noerrorsplugin
         // Only emit files when there are no errors
         new webpack.NoErrorsPlugin(),
@@ -132,20 +137,24 @@ module.exports = function makeWebpackConfig() {
         // Dedupe modules in the output
         new webpack.optimize.DedupePlugin(),
 
+        new ngAnnotatePlugin({
+            add: true
+        }),
+
         // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
         // Minify all javascript, switch loaders to minimizing mode
-        // new webpack.optimize.UglifyJsPlugin({
-        // //
-        //     minimize: true,
-        //     beautify: false,
-        //     compress: {
-        //         dead_code: true,
-        //         global_defs: {
-        //             DEBUG: false
-        //         }
-        //     },
-        //     deadCode: true
-        // }),
+        new webpack.optimize.UglifyJsPlugin({
+        //
+            minimize: true,
+            beautify: false,
+            compress: {
+                dead_code: true,
+                global_defs: {
+                    DEBUG: false
+                }
+            },
+            deadCode: true
+        }),
 
         new ExtractTextPlugin('style.css'),
         // Copy assets from the public folder

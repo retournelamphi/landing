@@ -27,7 +27,7 @@
 - `npm install`
 - `bower install`
 - `npm run build`
-- `cd dist && npm start`
+- `cd dist && npm install --production && npm start`
 
 ##stack
 

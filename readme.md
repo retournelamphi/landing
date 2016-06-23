@@ -10,13 +10,22 @@
 ##use
 
 - `npm install`
-- launch mongodb
+- `bower install`
+- `npm run webpack` you can edit for --watch
 - `npm run start-dev`
 
+##dockerise (wip) 
+
+- `npm install`
+- `bower install`
+- `npm run build`
+- `docker build -t rl/landing .`
+- `docker run -p 3000:5000 -d rl/landing`
 
 ##production 
 
 - `npm install`
+- `bower install`
 - `npm run build`
 - `cd dist && npm start`
 
@@ -38,15 +47,3 @@
 - [express](https://www.npmjs.com/package/express)
 - [morgan](https://www.npmjs.com/package/morgan)
 - [sendgrid](https://www.npmjs.com/package/sendgrid)
-
-##process
-
-- [git-flow](https://github.com/nvie/gitflow)
-
-##todo
-
-- [x] add subscription count in `index.jade`
-- [ ] change `public/images/*`
-- [ ] change mail template `server/constants/subscription.js`
-- [ ] add ganalytics
-- [ ] move cdn to bower

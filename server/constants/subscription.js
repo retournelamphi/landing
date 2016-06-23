@@ -7,7 +7,7 @@ export const MAIL_SERVER_ADRESS = 'infos@retournelamphi.fr';
 export const MAIL_SUBJECT = 'Bienvenue dans la communauté Retourne l’Amphi !';
 export const MAIL_BODY = `La communauté Retourne l’Amphi est très heureuse de te compter parmi ses membres !
 
-Surveille bien ta boîte mail, tu recevras bientôt un questionnaire nous permettant de connaître ton opinion et ton/tes avis sur ton parcours universitaire.</b></p>
+Surveille bien ta boîte mail, tu recevras bientôt un questionnaire nous permettant de connaître ton opinion et ton/tes avis sur ton parcours universitaire.
 
 Tu te poses des questions sur Retourne l’Amphi ?
 Envoie les nous à hi@retournelamphi.fr et nous y répondrons au plus vite.

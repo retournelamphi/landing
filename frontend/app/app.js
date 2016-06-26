@@ -121,7 +121,9 @@ function MainCtrl($http, toastr, $uibModal) {
         $http(req).success(function (data) {
             self.submitted = true;
             self.formSuccess = true;
+            self.email = '';
             toastr.success(data, 'La communauté Retourne L\'amphi');
+            getCount();
         }).error(function (data) {
             self.formError = true;
             self.submitted = false;

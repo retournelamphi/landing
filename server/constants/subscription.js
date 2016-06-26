@@ -10,7 +10,7 @@ export const MAIL_BODY = `La communauté Retourne l’Amphi est très heureuse d
 Surveille bien ta boîte mail, tu recevras bientôt un questionnaire nous permettant de connaître ton opinion et ton/tes avis sur ton parcours universitaire.
 
 Tu te poses des questions sur Retourne l’Amphi ?
-Envoie les nous à hi@retournelamphi.fr et nous y répondrons au plus vite.
+Envoie les nous à infos@retournelamphi.fr et nous y répondrons au plus vite.
 
 À très bientôt !
 

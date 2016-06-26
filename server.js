@@ -1,4 +1,4 @@
-import app from './config/express';
+import app from './server/config/express';
 import mongoose from 'mongoose';
 const debug = require('debug')('landing:index');
 

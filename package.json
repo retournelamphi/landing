@@ -2,13 +2,13 @@
   "name": "landing",
   "version": "1.0.0",
   "description": "retournelamphi landing page",
-  "main": "server/index.js",
+  "main": "server.js",
   "scripts": {
-    "build": "npm run clean && babel --optional runtime server -d dist/server && npm run cp-files && npm run webpack",
+    "build": "npm run clean && babel --optional runtime server.js -d dist && babel --optional runtime server -d dist/server && npm run cp-files && npm run webpack",
     "clean": "rm -rf dist",
     "cp-files": "cp package.json dist/package.json && cp -rf server/views dist/server/views",
     "webpack": " webpack --bail --progress --profile",
-    "start": "node server/index.js",
+    "start": "node server.js",
     "babel-nodemon": "nodemon --exec ./node_modules/.bin/babel-node --",
     "start-dev": "NODE_ENV=development DEBUG=express:* npm run babel-nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"

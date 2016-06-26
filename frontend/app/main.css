@@ -37,7 +37,6 @@ h5 {
     -webkit-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    padding-top: 10px;
     font-family: 'Poiret One', cursive;
     position: fixed;
     z-index: -9999;
@@ -95,12 +94,14 @@ a.more-btn.btn :hover{
 .center {
     float: none;
     display: block;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
 }
 .logo {
     background: url('../images/logo.svg');
     display: block;
+    top: 15px;
     width: 180px;
     height: 180px;
     background-size: 180px 180px;

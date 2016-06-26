@@ -14,18 +14,16 @@
 </head>
 
 <body ng-controller="MainCtrl as main" ng-cloak>
-
 <div class="container">
-    <div class="row">
-        <div class="center logo"></div>
-    </div>
+    <div class="center logo"></div>
 
     <h1 class="cover-heading" style="padding-bottom: 5%">Retourne l'Amphi</h1>
     <h5>Partage ton expérience sur l'éducation d'aujourd'hui,<br> contribue à la révolution de demain.</h5>
 
     <form class="signup-form" ng-submit="main.submit()">
         <div class="input-group input-group-md" ng-class="{'has-error': main.formError}">
-            <input type="email" class="form-control transparent-input" placeholder="Adresse email" ng-model="main.email"
+            <input type="email" class="form-control transparent-input" placeholder="Adresse email"
+                   ng-model="main.email"
                    ng-disabled="main.submitted">
             <span class="input-group-btn">
               <button class="btn btn-success btn-rl"
@@ -51,7 +49,8 @@
        data-keyboard="false"
        class="btn more-btn"
        ng-click="main.open('lg')">
-        <strong><i class="fa fa-3x fa-plus"></i> <span class="hidden-xs hidden-sm">Plus d'informations</span></strong>
+        <strong><i class="fa fa-3x fa-plus"></i> <span
+                class="hidden-xs hidden-sm">Plus d'informations</span></strong>
     </a>
 
     <div style="align-items: center; padding-top: 8px">
@@ -86,16 +85,19 @@
 
         <h5>Pourquoi donner mon adresse mail ?</h5>
 
-        <p>Cette plate forme pourra voir le jour et se développera grâce aux avis réunis partout en France. En laissant ton
-        adresse, tu pourras par la suite nous faire part de ton avis et ainsi apporter ta pierre à cet édifice.</p>
+        <p>Cette plate forme pourra voir le jour et se développera grâce aux avis réunis partout en France. En laissant
+            ton
+            adresse, tu pourras par la suite nous faire part de ton avis et ainsi apporter ta pierre à cet édifice.</p>
 
         <p>Alors si tu es étudiant(e) ou que tu viens de finir tes études, n’hésite pas une seconde, rejoins-nous !</p>
 
         <h5>Qui sommes-nous ?</h5>
 
-        <p>Issue d’une collaboration entre un professeur et cinq étudiants à l’Université de Bordeaux. L’idée de Retourne
-        l’Amphi nous est venue en observant nos différents parcours et en nous demandant ce qu’il serait advenu si une
-        telle plate-forme avait existé.</p>
+        <p>Issue d’une collaboration entre un professeur et cinq étudiants à l’Université de Bordeaux. L’idée de
+            Retourne
+            l’Amphi nous est venue en observant nos différents parcours et en nous demandant ce qu’il serait advenu si
+            une
+            telle plate-forme avait existé.</p>
 
         <b>C’est ainsi que Retourne l’Amphi est né.</b>
 

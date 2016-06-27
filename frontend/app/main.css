@@ -40,7 +40,7 @@ h5 {
     font-family: 'Poiret One', cursive;
     position: fixed;
     z-index: -9999;
-    bottom: 0;
+    background-position: center center;
     min-width: 100%;
     min-height: 100%;
 }

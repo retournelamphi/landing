@@ -31,16 +31,14 @@ h5 {
     font-weight: bold;
 }
 
-.container {
-    background-image: url(../images/background.png);
+body {
     -moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     font-family: 'Poiret One', cursive;
-    position: fixed;
     z-index: -9999;
-    background-position: center center;
+    background: url(../images/background.png) center center no-repeat;
     min-width: 100%;
     min-height: 100%;
 }
